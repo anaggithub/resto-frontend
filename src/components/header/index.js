@@ -2,10 +2,7 @@ import React from "react";
 import APILogo from "../api-logo";
 import { Link } from "react-router-dom";
 import styled from 'styled-components'
-
-const Header = () => {
-
-  const Header = styled.header`
+const StyledHeader = styled.header`
   background-color: blue;
     width: 100%;
     height: 80px;
@@ -16,12 +13,14 @@ const Header = () => {
     position: relative;
   `;
 
+const Header = () => {
+
   return (
-    <Header >
+    <StyledHeader >
       <Link to="/home/">
         <APILogo />
       </Link>
-    </Header>
+    </StyledHeader>
   );
 };
 
