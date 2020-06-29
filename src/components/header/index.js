@@ -1,16 +1,26 @@
 import React from "react";
-import "./index.scss";
 import APILogo from "../api-logo";
 import { Link } from "react-router-dom";
 
 const Header = () => {
 
+  const Header = styled.header`
+  background-color: blue;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #c9c9c9;
+    position: relative;
+  `;
+
   return (
-    <header className="header-default">
+    <Header >
       <Link to="/home/">
-        <APILogo className="header-default--logo" />
+        <APILogo />
       </Link>
-    </header>
+    </Header>
   );
 };
 
