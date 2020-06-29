@@ -2,47 +2,24 @@
 
 .input {
   @include flex-column-box;
-
+  width: 100%;
   &--row {
-    border: black solid 1px;
+    padding: 0 15px;
     display: flex;
-    align-items: center;
-    height: 30px;
     width: 100%;
-
-    // &--label {
-    //   text-align: left;
-    //   width: 100px;
-    // }
-
+    height: 30px;
+    background-color: $color-secondary;
     &--error {
       margin: 0 auto;
     }
-    &.errorClass {
-      border: solid 1px red;
+    &--input {
+      width: 100%;
+      border: 1px solid #c9c9c9;
+      outline: none;
+      border-radius: 3px;
+      &.errorClass {
+        border: solid 1.5px $color-red;
+      }
     }
   }
 }
-
-// @media only screen and (min-width: 425px) {
-//   .input--row {
-//     &--label {
-//       width: 30%;
-//     }
-//     &--input {
-//       height: 30px;
-//       width: 70%;
-//     }
-//   }
-// }
-
-// @media only screen and (min-width: 600px) {
-//   .input--row {
-//     &--label {
-//       width: 30%;
-//     }
-//     &--input {
-//       width: 70%;
-//     }
-//   }
-// }
