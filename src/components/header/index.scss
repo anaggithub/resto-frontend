@@ -1,0 +1,12 @@
+@import "../layouts/styles/general-styles.scss";
+
+.header-default {
+  background-color: $color-secondary;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #c9c9c9;
+  position: relative;
+}
