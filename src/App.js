@@ -1,11 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import { AppProvider } from "./context/app";
+
+const App = () => {
   return (
-    <div>lala</div>
+    <AppProvider>
+      <Router>
+        <Switch>
+          <Route exact path="/" render={() => <Redirect to="/home" />} />
+          {/* <Route exact path="/home" component={Home} />
+          <Route exact path="/home/artists" component={Artists} />
+          <Route exact path="/home/artists/artist" component={ArtistDetail} />
+          <Route exact path="/home/artists/artist/album" component={Album} /> */}
+        </Switch>
+      </Router>
+    </AppProvider>
   );
-}
+};
 
 export default App;
