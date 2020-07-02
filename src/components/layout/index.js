@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import Header from "../header";
 
 const StyledDefaultLayout = styled.div`
@@ -11,6 +11,8 @@ flex-direction:column;
 const Children = styled.div`
 width: 100%;
 flex-grow: 1;
+display: flex;
+flex-direction:column;
 `;
 
 const DefaultLayout = ({ children }) => {
