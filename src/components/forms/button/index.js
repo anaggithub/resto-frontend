@@ -9,8 +9,9 @@ padding: 0.5rem 0.7rem;
 transition: opacity 0.6s ease-in-out;
 font-size: 12px;
 font-weight: 700;
-border: solid 1.3px #FF6347;
-border: solid 1.3px palevioletred;
+color: #FF8C69;
+background-color:white;
+border: solid 1.3px #FF8C69;
 &:hover {
   opacity: 0.6;
 }
@@ -19,29 +20,26 @@ ${({ variant }) => variants[variant]}
 `;
 
 const variants = {
-    primary: css`
-    background-color:#FF6347;
-    background-color:palevioletred;
+  primary: css`
+    background-color: #FF8C69;
     color:white;
   `,
-    secondary: css`
-    background-color:white;
-    color:#FF6347;
-    color:palevioletred;
+  secondary: css`
+    /* background-color:white; */
   `,
-    special: css`
+  special: css`
     border:none;
-    color: palevioletred;  `
+     `
 }
 function Button({ classes, onClick, children, variant }) {
-    return (
-        <StyledButton
-            addCSS={classes}
-            variant={variant}
-            onClick={onClick} >
-            {children}
-        </StyledButton >
-    );
+  return (
+    <StyledButton
+      addCSS={classes}
+      variant={variant}
+      onClick={onClick} >
+      {children}
+    </StyledButton >
+  );
 }
 
 export default Button
