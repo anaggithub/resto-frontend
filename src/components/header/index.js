@@ -5,17 +5,17 @@ import styled from 'styled-components'
 
 const StyledHeader = styled.header`
     width: 100%;
-    height: 80px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid #c9c9c9;
-    background-color:palevioletred;
-    position: relative;
+    /* border-bottom: 1px solid #c9c9c9; */
+    background-color: #AFEEEE;
+    /* //background-color:palevioletred; */
     color:white;
   `;
 
-const Header = () => {
+const Header = ({ classes }) => {
 
   return (
     <StyledHeader >
