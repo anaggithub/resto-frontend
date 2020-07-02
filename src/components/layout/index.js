@@ -1,26 +1,26 @@
-import React from "react"
+import React from "react";
+import styled, { css } from 'styled-components';
 import Header from "../header";
-import Footer from "../footer";
-import styled from 'styled-components';
 
 const StyledDefaultLayout = styled.div`
-background-color: pink;
-position: relative;
-display: flex;
-flex-direction: column;
 width: 100%;
 min-height: 100vh;
+display: flex;
+flex-direction:column;
+`;
+const Children = styled.div`
+width: 100%;
+flex-grow: 1;
 `;
 
 const DefaultLayout = ({ children }) => {
-
     return (
         <StyledDefaultLayout >
             <Header />
-            <div >
+            <Children >
                 {children}
-            </div>
-            <Footer />
+            </Children>
+            {/* <Footer /> */}
         </StyledDefaultLayout>
     );
 }
