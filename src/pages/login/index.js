@@ -8,22 +8,26 @@ import styled from 'styled-components';
 
 const Form = styled.form`
 width:100%;
-height:100%;
+flex-grow: 1;
 display:flex;
 flex-direction:column;
-background-color: pink;
 `;
-
 const InputsBox = styled.div`
+padding-top:2rem;
 flex-grow:1;
+display:flex;
+flex-direction:column;
+justify-content: flex-start;
+align-items:flex-start;
+/* background-color: pink; */
 `
 const ButtonsBox = styled.div`
 flex-grow:3;
 display:flex;
 flex-direction:column;
-justify-content: center;
+justify-content: start;
+align-items:center;
 `
-
 const Login = () => {
 
   const [user, setUser] = useState(null)
@@ -83,7 +87,6 @@ const Login = () => {
           <Input
             name="user"
             type="text"
-            placeholder="Ingrese su usuario"
             labelText="Usuario o correo electrónico"
             onChange={handleUserChange}
             error={userError}
@@ -92,14 +95,13 @@ const Login = () => {
           <Input
             name="password"
             type="text"
-            placeholder="Ingrese una contraseña"
             labelText="Contraseña"
             onChange={handlePasswordChange}>
           </Input>
         </InputsBox>
         <ButtonsBox>
-          <Button variant="primary" addCSS={"margin:10px;"}>Registrarse</Button>
-          <Button variant="special" addCSS={"margin:10px;"} > Iniciar Sesión</Button>
+          <Button variant="primary" addCSS={"margin:10px;"}>INICIAR SESION</Button>
+          <Button variant="special" addCSS={"margin:10px;"}>REGISTRARSE</Button>
         </ButtonsBox>
       </Form>
     </DefaultLayout>
