@@ -23,17 +23,18 @@ const Label = styled.label`
 width: 100%;
 margin-bottom:10px;
 padding-left:5px;
+font-size:0.8rem;
 `
-const Input = styled.input`
+const StyledInput = styled.input`
 width: 100%;
 outline: none;
 border: 1px solid #c9c9c9;
 border-radius: 3px;
 font-size: 15px;
 padding: 10px;
-background: papayawhip;
+/* background: papayawhip; */
 ::placeholder {
-  color: palevioletred;
+  /* color: palevioletred; */
 }
 ${props => props.addCSS}
 `
@@ -44,19 +45,19 @@ const errorClass = css`
 border: solid 1.5px #d80026;
 `;
 
-function InputBox({ name, type, placeholder, onChange, error, errorMessage, classes, labelText }) {
+function Input({ name, type, placeholder, onChange, error, errorMessage, classes, labelText }) {
     return (
         <InputContainer addCSS={classes}>
             <Row>
                 <Label>{labelText}</Label>
-                <Input
+                <StyledInput
                     addCSS={error ? errorClass : ""}
                     name={name}
                     type={type}
                     placeholder={placeholder}
                     onChange={onChange}
                 >
-                </Input>
+                </StyledInput>
             </Row>
             <ErrorRow>
                 {error && <ErrorMessage>{`${errorMessage}`}</ErrorMessage>}
@@ -65,4 +66,4 @@ function InputBox({ name, type, placeholder, onChange, error, errorMessage, clas
     );
 }
 
-export default InputBox
+export default Input
