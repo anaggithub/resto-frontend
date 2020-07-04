@@ -1,21 +1,8 @@
 import { combineReducers } from "redux";
+import authReducer from "./auth.reducer"
 
-const initialState = {
-  pet: "",
-};
-
-const pet = (state = initialState, action) => {
-  switch (action.type) {
-    case "SET_PET":
-      return action.payload;
-
-    default:
-      return state;
-  }
-};
-
-export const reducer = combineReducers({
-  pet,
+const reducers = combineReducers({
+  auth: authReducer,
 });
 
-export default reducer;
+export default reducers;
