@@ -1,9 +1,10 @@
 import React from "react";
 import Home from "./pages/home";
 import Login from "./pages/login";
+import Dashboard from "./pages/dashboard";
 import store from "./store/index.js";
 import { Provider as StoreProvider } from "react-redux";
-
+import { deleteToken } from "./helpers/login"
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,6 +15,7 @@ import {
 
 const App = () => {
   const history = useHistory();
+  deleteToken()
   return (
     <StoreProvider store={store}>
       <Router>
@@ -21,10 +23,7 @@ const App = () => {
           <Route exact path="/" render={() => <Redirect to="/home" />} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/login" component={Login} />
-          {/* <Route exact path="/home" component={Home} />
-          <Route exact path="/home/artists" component={Artists} />
-          <Route exact path="/home/artists/artist" component={ArtistDetail} />
-          <Route exact path="/home/artists/artist/album" component={Album} /> */}
+          <Route exact path="/dashboard" component={Dashboard} />
         </Switch>
       </Router>
     </StoreProvider>
