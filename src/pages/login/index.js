@@ -2,57 +2,22 @@ import React, { useState } from "react";
 import DefaultLayout from "../../components/layout";
 import Input from "../../components/forms/input";
 import Button from "../../components/forms/button";
-import { setToken } from "../../helpers/auth-helper.js"
-import Axios from "axios"
-import styled from 'styled-components';
+import { Form, InputsBox, ButtonsBox } from "./styles"
+import { useHistory } from 'react-router-dom'
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../../actions/login";
 
-const Form = styled.form`
-width:100%;
-flex-grow: 1;
-display:flex;
-flex-direction:column;
-`;
-const InputsBox = styled.div`
-padding-top:2rem;
-flex-grow:1;
-display:flex;
-flex-direction:column;
-justify-content: flex-start;
-align-items:flex-start;
-/* background-color: pink; */
-`
-const ButtonsBox = styled.div`
-flex-grow:3;
-display:flex;
-flex-direction:column;
-justify-content: start;
-align-items:center;
-`
 const Login = () => {
-
-  const [user, setUser] = useState(null)
-  const [password, setPassword] = useState(null)
-  // const [loadingUser, setLoadingUser] = useState(true)
-
+  const dispatch = useDispatch();
+  const history = useHistory()
+  const [user, setUser] = useState("")
+  const [password, setPassword] = useState("")
   const [userError, setUserError] = useState(false);
   const [userErrorMessage, setUserErrorMessage] = useState("");
-
   // const { passwordError, setPasswordError } = useState(false);
   // const { passwordErrorMessage, setPasswordErrorMessage } = useState("");
-
-  async function login(user, password) {
-    //  console.log(user, password)
-
-    // const res = await Axios.get("http://hadita-resto-api.herokuapp.com/login", {
-    //   "username": "admin",
-    //   "password": "Ad1023MinN"
-    // })
-    const res = await Axios.get("http://hadita-resto-api.herokuapp.com/products")
-    console.log(res)
-    //let data = res.data
-    //  setToken(data.token)
-    //  console.log(data.token)
-  }
+  const auth = useSelector(state => (state))
+  console.log(auth)
 
   function handleUserChange(e) {
     setUser(e.target.value)
@@ -61,24 +26,25 @@ const Login = () => {
     setPassword(e.target.value)
   }
 
-  async function handleSubmit(e) {
-    console.log("entro al hadnlesbu")
+  function handleSubmit(e) {
     e.preventDefault();
+    dispatch(login());
+    const isAdmin = useSelector(state => state.login.isAdmin)
+    isAdmin ? history.push('/dashboard') : history.push('/home')
+
     //let letters = /^[A-Za-z ]+$/;
+    // if (!user || user.trim() === "") {
+    //   setUserErrorMessage("Ingrese un usuario");
+    //   setUserError(true);
+    // }
+    // // else if (!search.match(letters)) {
+    // //   setSearchErrorMessage("Solo se aceptan letras.");
+    // //   setSearchError(true);
+    // //} 
+    // else {
 
-    if (!user || user.trim() === "") {
-      setUserErrorMessage("Ingrese un usuario");
-      setUserError(true);
-    }
 
-    // else if (!search.match(letters)) {
-    //   setSearchErrorMessage("Solo se aceptan letras.");
-    //   setSearchError(true);
-    //} 
-    else {
-      await login()
-      console.log("Dos dias me va a llevar la primera!")
-    }
+    // }
   }
   return (
     <DefaultLayout>
