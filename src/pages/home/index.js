@@ -1,24 +1,29 @@
-import React from "react";
-// import "./index.scss";
-// import Pet from "../../components/pet";
+import React, { useState, useEffect } from "react";
 import DefaultLayout from "../../components/layout";
-
-// import { useDispatch } from "react-redux";
-// import { setPet } from "../../actions/";
+import getProducts from "../../services/products"
 
 const Home = ({ history }) => {
-  // const dispatch = useDispatch();
 
-  // function handleOnClick(pet) {
-  //   dispatch(setPet(pet));
-  //   history.push("/chat");
-  // }
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    async function getProductsToRender() {
+      const data = await getProducts()
+      setProducts(data)
+    }
+    getProductsToRender()
+  }, [])
 
   return (
-
     <DefaultLayout>
-      <div >HOME</div>
-
+      <div>HOME</div>
+      <div>
+        {products.length > 0 && products.map(
+          (product) => (
+            <div key={product.id}>{product.product}</div>
+          )
+        )}
+      </div>
     </DefaultLayout>
   );
 };
