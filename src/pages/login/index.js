@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DefaultLayout from "../../components/layout";
 import Input from "../../components/forms/input";
 import Button from "../../components/forms/button";
-import { Form, InputsBox, ButtonsBox } from "./styles"
+import Spinner from "../../components/loading-spinner"
+import { Form, InputsBox, ButtonsBox, SpinnerBox } from "./styles"
 import { useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../actions/login";
@@ -16,8 +17,10 @@ const Login = () => {
   const [userErrorMessage, setUserErrorMessage] = useState("");
   // const { passwordError, setPasswordError } = useState(false);
   // const { passwordErrorMessage, setPasswordErrorMessage } = useState("");
-  const auth = useSelector(state => (state))
-  console.log(auth)
+  const [isLoading, setLoading] = useState(false);
+
+  const loading = useSelector(state => state.login.isLoading);
+  const isAdmin = useSelector(state => state.login.isAdmin);
 
   function handleUserChange(e) {
     setUser(e.target.value)
@@ -29,8 +32,6 @@ const Login = () => {
   function handleSubmit(e) {
     e.preventDefault();
     dispatch(login());
-    const isAdmin = useSelector(state => state.login.isAdmin)
-    isAdmin ? history.push('/dashboard') : history.push('/home')
 
     //let letters = /^[A-Za-z ]+$/;
     // if (!user || user.trim() === "") {
@@ -42,10 +43,25 @@ const Login = () => {
     // //   setSearchError(true);
     // //} 
     // else {
-
-
     // }
   }
+
+  useEffect(() => {
+    if (isAdmin === true) {
+      console.log("entro al admin true")
+      history.push('/dashboard');
+    }
+    else if (isAdmin === false) {
+      console.log(isAdmin)
+      console.log("entro al admin false")
+      history.push('/home');
+    }
+  }, [isAdmin]);
+
+  useEffect(() => {
+    setLoading(loading);
+  }, [loading]);
+
   return (
     <DefaultLayout>
       <Form method="get" onSubmit={handleSubmit}>
@@ -58,6 +74,9 @@ const Login = () => {
             error={userError}
             errorMessage={userErrorMessage}>
           </Input>
+          <SpinnerBox>
+            {isLoading && <Spinner />}
+          </SpinnerBox>
           <Input
             name="password"
             type="text"
@@ -65,10 +84,12 @@ const Login = () => {
             onChange={handlePasswordChange}>
           </Input>
         </InputsBox>
+
         <ButtonsBox>
           <Button variant="primary" addCSS={"margin:10px;"}>INICIAR SESION</Button>
           <Button variant="special" addCSS={"margin:10px;"}>REGISTRARSE</Button>
         </ButtonsBox>
+
       </Form>
     </DefaultLayout>
   );
