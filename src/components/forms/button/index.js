@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 const StyledButton = styled.button`
 text-decoration: none;
 cursor: pointer;
+outline:none;
 border-radius: 25px;
 padding: 0.7rem 2.4rem;
 transition: opacity 0.6s ease-in-out;
@@ -32,7 +33,6 @@ const variants = {
     border:none;
      `
 }
-
 
 function Button({ classes, onClick, children, variant }) {
   return (
