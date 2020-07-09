@@ -16,14 +16,14 @@ justify-content: center;
 input{
     margin-bottom:1rem;
 }
-label{
-    font-size: 0.8rem;
-}
 @media (min-width: 500px) {
-    padding: 2rem 5%;
+    padding: 2rem 10%;
   }
 @media (min-width: 768px) {  
-    padding: 2rem 10%; 
+    padding: 2rem 15%; 
+}
+@media (min-width: 768px) {  
+    padding: 2rem 16%; 
 }
 /* background-color: pink; */
 `
@@ -43,7 +43,4 @@ left:0;
 right:0;
 margin-left: auto;
 margin-right: auto;
-
 `
-
-
