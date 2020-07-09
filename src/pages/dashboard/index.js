@@ -8,7 +8,10 @@ const Dashboard = () => {
 
     return (
         <DefaultLayout>
-            <div>DASHBOARD</div>
+            <section>
+                <h1>ADMIN DASHBOARD</h1>
+                <h2>MI PRIMER SPINNER DIOSITO</h2>
+            </section>
         </DefaultLayout>
     );
 };
