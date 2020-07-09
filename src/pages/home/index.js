@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
 import DefaultLayout from "../../components/layout";
-import getProducts from "../../services/products"
+//import Spinner from "../../components/loading-spinner"
+import { useDispatch, useSelector } from "react-redux";
+import { getItems } from "../../actions/items";
 
 const Home = () => {
-
-  const [products, setProducts] = useState([])
+  const dispatch = useDispatch();
+  const products = useSelector(state => state.items.items);
+  //const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
-    async function getProductsToRender() {
-      const data = await getProducts()
-      setProducts(data)
-    }
-    getProductsToRender()
-  }, [])
+    dispatch(getItems());
+  }, [getItems])
 
   return (
     <DefaultLayout>
@@ -20,7 +19,10 @@ const Home = () => {
       <div>
         {products.length > 0 && products.map(
           (product) => (
-            <div key={product.id}>{product.product}</div>
+            <div key={product.id}>
+              <h3>{product.product}</h3>
+              <img src={product.picture} />
+            </div>
           )
         )}
       </div>
