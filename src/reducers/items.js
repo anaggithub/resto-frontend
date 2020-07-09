@@ -1,4 +1,4 @@
-import { ITEMS_GET_SUCCESS, ITEMS_GET_FAIL, ITEMS_GET_START } from './types';
+import { ITEMS_GET_SUCCESS, ITEMS_GET_FAIL, ITEMS_GET_START } from '../actions/types';
 
 const initialState = {
     items: [],
@@ -6,7 +6,7 @@ const initialState = {
 };
 
 const items = (state = initialState, action) => {
-    console.log(action.payload.data)
+    console.log(action.payload)
     switch (action.type) {
         case ITEMS_GET_START:
             return {
