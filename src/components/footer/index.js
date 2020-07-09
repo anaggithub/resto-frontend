@@ -1,31 +1,31 @@
 import React from "react"
-import "./index.scss"
 import APILogo from "../api-logo";
+import { StyledFooter, Copyrights, APILogo } from "./styles"
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <StyledFooter >
       <ul className="footer--socialmedia">
         <li>
-          <i className="footer--socialmedia--icon fab fa-facebook-f"></i>
+          <i className="fab fa-facebook-f"></i>
         </li>
         <li>
-          <i className="footer--socialmedia--icon fab fa-twitter"></i>
+          <i className="fab fa-twitter"></i>
         </li>
         <li>
-          <i className="footer--socialmedia--icon fab fa-instagram"></i>
+          <i className="fab fa-instagram"></i>
         </li>
         <li>
-          <i className="footer--socialmedia--icon fab fa-youtube"></i>
+          <i className="fab fa-youtube"></i>
         </li>
       </ul>
-      <div className="footer--info">
-        <APILogo className="footer--info--apititle"/> 
+      <Copyrights className="footer--info">
+        <APILogo className="footer--info--apititle" />
         <p className="footer--info--paragraph">
-          Todos Los Derechos Reservados © 2020 
+          Todos Los Derechos Reservados © 2020
         </p>
-      </div>
-    </footer>
+      </Copyrights>
+    </StyledFooter>
   );
 }
 
