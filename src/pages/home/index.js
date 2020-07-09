@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import DefaultLayout from "../../components/layout";
 import getProducts from "../../services/products"
 
-const Home = ({ history }) => {
+const Home = () => {
 
   const [products, setProducts] = useState([])
 
