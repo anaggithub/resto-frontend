@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { LOGIN_SUCCESS, LOGIN_FAILURE, LOGIN_LOADING } from './types';
+import { LOGIN_SUCCESS, LOGIN_FAIL, LOGIN_START } from './types';
 
 export const login = () => {
     console.log("lala")
@@ -11,7 +11,7 @@ export const login = () => {
                 'Access-Control-Allow-Headers': 'Content-Type, Authorization',
             }
         };
-        dispatch({ type: LOGIN_LOADING });
+        dispatch({ type: LOGIN_START });
 
         axios
             .post(url, {
@@ -27,7 +27,7 @@ export const login = () => {
             })
             .catch(e => {
                 dispatch({
-                    type: LOGIN_FAILURE
+                    type: LOGIN_FAIL
                 });
             })
     }
