@@ -1,4 +1,4 @@
-import { LOGIN_SUCCESS, LOGIN_LOADING, LOGIN_FAILURE } from '../actions/types';
+import { LOGIN_SUCCESS, LOGIN_START, LOGIN_FAIL } from '../actions/types';
 import { setToken, getToken, deleteToken } from "../helpers/login"
 
 const initialState = {
@@ -10,7 +10,7 @@ const initialState = {
 
 const login = (state = initialState, action) => {
     switch (action.type) {
-        case LOGIN_LOADING:
+        case LOGIN_START:
             return {
                 ...state,
                 isLoading: true
@@ -24,7 +24,7 @@ const login = (state = initialState, action) => {
                 isAdmin: action.payload.data.role === 1 ? true : false,
                 isLoading: false
             };
-        case LOGIN_FAILURE:
+        case LOGIN_FAIL:
             deleteToken()
             return {
                 ...state,
