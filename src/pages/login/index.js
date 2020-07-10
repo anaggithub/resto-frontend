@@ -11,14 +11,17 @@ import { login } from "../../actions/login";
 const Login = () => {
   const dispatch = useDispatch();
   const history = useHistory()
+
   const [user, setUser] = useState("")
   const [password, setPassword] = useState("")
+
   const [userError, setUserError] = useState(false);
   const [userErrorMessage, setUserErrorMessage] = useState("");
-  // const { passwordError, setPasswordError } = useState(false);
-  // const { passwordErrorMessage, setPasswordErrorMessage } = useState("");
-  const [isLoading, setLoading] = useState(false);
 
+  const [passwordError, setPasswordError] = useState(false);
+  const [passwordErrorMessage, setPasswordErrorMessage] = useState("");
+
+  const [isLoading, setLoading] = useState(false);
   const loading = useSelector(state => state.login.isLoading);
   const isAdmin = useSelector(state => state.login.isAdmin);
 
@@ -31,19 +34,22 @@ const Login = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch(login());
-
-    //let letters = /^[A-Za-z ]+$/;
-    // if (!user || user.trim() === "") {
-    //   setUserErrorMessage("Ingrese un usuario");
-    //   setUserError(true);
-    // }
-    // // else if (!search.match(letters)) {
-    // //   setSearchErrorMessage("Solo se aceptan letras.");
-    // //   setSearchError(true);
-    // //} 
-    // else {
-    // }
+    let letters = /^[A-Za-z ]+$/;
+    if (!user || user.trim() === "") {
+      setUserErrorMessage("Ingrese un usuario");
+      setUserError(true);
+    }
+    else if (!password || password.trim() === "") {
+      setPasswordErrorMessage("Ingrese una contraseña");
+      setPasswordError(true);
+    }
+    else if (!user.match(letters)) {
+      setUserErrorMessage("Solo se aceptan letras.");
+      setUserError(true);
+    }
+    else {
+      dispatch(login(user, password));
+    }
   }
 
   useEffect(() => {
@@ -79,9 +85,11 @@ const Login = () => {
           </SpinnerBox>
           <Input
             name="password"
-            type="text"
+            type="password"
             labelText="Contraseña"
-            onChange={handlePasswordChange}>
+            onChange={handlePasswordChange}
+            error={passwordError}
+            errorMessage={passwordErrorMessage}>
           </Input>
         </InputsBox>
 

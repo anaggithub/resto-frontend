@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { LOGIN_SUCCESS, LOGIN_FAIL, LOGIN_START } from './types';
 
-export const login = () => {
-    console.log("lala")
+export const login = (user, password) => {
+    //console.log("lala")
     return (dispatch) => {
         let url = "http://restohaditaheroku.herokuapp.com/login"
         let headers = {
@@ -15,8 +15,8 @@ export const login = () => {
 
         axios
             .post(url, {
-                username: "admin",
-                password: "Ad1023MinN"
+                username: user,
+                password: password
 
             }, headers)
             .then(res => {
