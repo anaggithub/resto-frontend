@@ -25,9 +25,10 @@ export const login = (user, password) => {
                     payload: res
                 });
             })
-            .catch(e => {
+            .catch(error => {
                 dispatch({
-                    type: LOGIN_FAIL
+                    type: LOGIN_FAIL,
+                    payload: error.response.message
                 });
             })
     }

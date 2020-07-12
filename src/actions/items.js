@@ -23,9 +23,10 @@ export const getItems = () => {
                     payload: res
                 });
             })
-            .catch(e => {
+            .catch(error => {
                 dispatch({
-                    type: ITEMS_GET_FAIL
+                    type: ITEMS_GET_FAIL,
+                    payload: error.response.message
                 });
             })
     }

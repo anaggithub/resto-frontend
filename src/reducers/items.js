@@ -5,7 +5,7 @@ const initialState = {
     isLoading: false
 };
 
-const items = (state = initialState, action) => {
+const itemsReducer = (state = initialState, action) => {
     console.log(action.payload)
     switch (action.type) {
         case ITEMS_GET_START:
@@ -23,11 +23,12 @@ const items = (state = initialState, action) => {
             return {
                 ...state,
                 items: [],
-                isLoading: false
+                isLoading: false,
+                error: action.payload
             }
         default:
             return state;
     }
 }
 
-export default items
+export default itemsReducer

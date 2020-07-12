@@ -8,7 +8,7 @@ const initialState = {
     isLoading: false
 };
 
-const login = (state = initialState, action) => {
+const loginReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOGIN_START:
             return {
@@ -31,11 +31,12 @@ const login = (state = initialState, action) => {
                 token: "",
                 isAuthenticated: false,
                 isAdmin: false,
-                isLoading: false
+                isLoading: false,
+                error: action.payload
             };
         default:
             return state;
     }
 }
 
-export default login
+export default loginReducer
