@@ -19,8 +19,7 @@ font-size:12px;
 @media screen and (min-width: 768px) { 
   font-size: 14px;
 }
-
-${props => props.addCSS}
+/* ${props => props.addCSS} */
 ${({ variant }) => variants[variant]}
 `;
 
@@ -35,5 +34,14 @@ export const variants = {
   special: css`
     /* font-size:11px; */
     border:none;
-     `
+     `,
+  add: css`
+    background-color: #FF8C69;
+    color:white;
+    padding:0;   
+    border-radius: 100%; 
+    width: 50px;
+    height: 50px;
+    outline: 0;
+    `
 }
