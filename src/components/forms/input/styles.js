@@ -4,7 +4,7 @@ export const InputContainer = styled.div`
 display: flex;
 flex-direction: column;
 width: 100%;
-${props => props.addCSS}
+/* ${props => props.addCSS} */
 `
 export const Row = styled.div`
 padding: 5px 15px;
@@ -22,24 +22,24 @@ export const Label = styled.label`
 width: 100%;
 margin-bottom:10px;
 padding-left:5px;
-/* font-size:0.8rem; */
 `
 export const StyledInput = styled.input`
 width: 100%;
 outline: none;
 border: 1px solid #c9c9c9;
 border-radius: 3px;
-/* font-size: 15px; */
 padding: 10px;
+color:grey;
 /* background: papayawhip; */
 ::placeholder {
-  /* color: palevioletred; */
+  color: palevioletred;
 }
-${props => props.addCSS}
+/* ${props => props.addCSS} */
 `
 export const ErrorMessage = styled.p`
 padding-left:5px;
 `
 export const errorClass = css`
 border: solid 1.5px #d80026;
+border: solid 1.5px #FF8C69;
 `;
