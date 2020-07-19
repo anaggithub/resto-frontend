@@ -1,7 +1,7 @@
 import React from "react";
 import { InputContainer, Row, Label, StyledInput, ErrorRow, ErrorMessage, errorClass } from "./styles"
 
-function Input({ name, type, placeholder, onChange, error, errorMessage, classes, labelText }) {
+function Input({ name, type, placeholder, maxLength, minLength, autoComplete, onChange, error, errorMessage, classes, labelText }) {
     return (
         <InputContainer addCSS={classes}>
             <Row>
@@ -12,6 +12,9 @@ function Input({ name, type, placeholder, onChange, error, errorMessage, classes
                     type={type}
                     placeholder={placeholder}
                     onChange={onChange}
+                    maxLength={maxLength}
+                    minLength={minLength}
+                    autoComplete={autoComplete}
                 >
                 </StyledInput>
             </Row>
