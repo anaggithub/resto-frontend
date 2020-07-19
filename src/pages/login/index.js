@@ -34,6 +34,9 @@ const Login = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
+    setUserError(false);
+    setPasswordError(false);
+
     let letters = /^[A-Za-z ]+$/;
     if (!user || user.trim() === "") {
       setUserErrorMessage("Ingrese un usuario");
@@ -78,7 +81,10 @@ const Login = () => {
             labelText="Usuario o correo electrónico"
             onChange={handleUserChange}
             error={userError}
-            errorMessage={userErrorMessage}>
+            errorMessage={userErrorMessage}
+            maxLength="30"
+            autoComplete="on"
+          >
           </Input>
           <SpinnerBox>
             {isLoading && <Spinner />}
@@ -89,15 +95,16 @@ const Login = () => {
             labelText="Contraseña"
             onChange={handlePasswordChange}
             error={passwordError}
-            errorMessage={passwordErrorMessage}>
+            errorMessage={passwordErrorMessage}
+            maxLength="10"
+            autoComplete="on"
+          >
           </Input>
         </InputsBox>
-
         <ButtonsBox>
-          <Button variant="primary" addCSS={"margin:10px;"}>INICIAR SESION</Button>
-          <Button variant="special" addCSS={"margin:10px;"}>REGISTRARSE</Button>
+          <Button variant="primary" >INICIAR SESION</Button>
+          <Button variant="special" >REGISTRARSE</Button>
         </ButtonsBox>
-
       </Form>
     </DefaultLayout>
   );
