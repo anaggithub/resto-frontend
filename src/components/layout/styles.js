@@ -5,7 +5,8 @@ width: 100%;
 min-height: 100vh;
 display: flex;
 flex-direction:column;
-color:grey;
+color: ${({ theme }) => theme.colors.primary};
+  /* background-color: ${({ theme }) => theme.colors.background}; */
 `;
 export const Children = styled.div`
 width: 100%;
