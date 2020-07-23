@@ -17,7 +17,7 @@ const Home = () => {
 
   return (
     <DefaultLayout childrenStyles={layoutStyles}>
-      <Typography tag="h2">Nuestros platos</Typography>
+      <Typography component="h2">Nuestros platos</Typography>
       <React.Fragment>
         {products.length > 0 && products.map(
           (product) => (
