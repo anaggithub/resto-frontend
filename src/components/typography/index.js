@@ -1,22 +1,28 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from 'styled-components';
+import { Component } from "./styles"
 
-const Component = styled.div`
-  ${({ as, styles }) => styles[as]};  
-`;
-
-const Typography = ({ tag, styles, ...props }) => {
-    return <Component styles={styles} as={tag} {...props} />;
+const Typography = ({ component, styles, ...props }) => {
+    return <Component as={component} styles={styles} {...props} />;
 };
 
 Typography.propTypes = {
-    tag: PropTypes.string,
+    component: PropTypes.oneOf([
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+        "span",
+        "p",
+        "label"
+    ]),
     styles: PropTypes.object
 };
 
 Typography.defaultProps = {
-    tag: "p",
+    component: "p",
     styles: {}
 };
 
