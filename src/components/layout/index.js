@@ -2,11 +2,11 @@ import React from "react";
 import Header from "../header";
 import { StyledDefaultLayout, Children } from "./styles"
 
-const DefaultLayout = ({ children }) => {
+const DefaultLayout = ({ children, layoutStyles, childrenStyles }) => {
     return (
-        <StyledDefaultLayout >
+        <StyledDefaultLayout styles={layoutStyles} >
             <Header />
-            <Children >
+            <Children styles={childrenStyles} >
                 {children}
             </Children>
             {/* <Footer /> */}

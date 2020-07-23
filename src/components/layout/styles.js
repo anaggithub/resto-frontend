@@ -7,6 +7,7 @@ display: flex;
 flex-direction:column;
 color: ${({ theme }) => theme.colors.primary};
 background-color: ${({ theme }) => theme.colors.background};
+${({ styles }) => styles}
 `;
 export const Children = styled.div`
 width: 100%;
@@ -15,4 +16,5 @@ margin:0 auto;
 flex-grow: 1;
 display: flex;
 flex-direction:column;
+${({ styles }) => styles}
 `;
