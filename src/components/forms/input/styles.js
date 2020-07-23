@@ -4,7 +4,7 @@ export const InputContainer = styled.div`
 display: flex;
 flex-direction: column;
 width: 100%;
-/* ${props => props.addCSS} */
+${({ styles }) => styles}
 `
 export const Row = styled.div`
 padding: 5px 15px;
@@ -16,7 +16,7 @@ export const ErrorRow = styled.div`
 display: flex;
 width: 100%;
 height: 40px;
-padding: 5px 15px;
+padding: 1px 15px 5px 15px;
 `
 export const Label = styled.label`
 width: 100%;
@@ -26,20 +26,19 @@ padding-left:5px;
 export const StyledInput = styled.input`
 width: 100%;
 outline: none;
-border: 1px solid #c9c9c9;
+border: 1px solid ${({ theme }) => theme.colors.inputBorder};
 border-radius: 3px;
 padding: 10px;
-color:grey;
-/* background: papayawhip; */
+color: ${({ theme }) => theme.colors.primary};
+/* background:  ${({ theme }) => theme.colors.papayawhip}; */
 ::placeholder {
-  color: palevioletred;
+  color: ${({ theme }) => theme.colors.paleviolet};
 }
-/* ${props => props.addCSS} */
+${({ styles }) => styles}
 `
 export const ErrorMessage = styled.p`
 padding-left:5px;
 `
 export const errorClass = css`
-border: solid 1.5px #d80026;
-border: solid 1.5px #FF8C69;
+border: solid 3px ${({ theme }) => theme.colors.red};;
 `;

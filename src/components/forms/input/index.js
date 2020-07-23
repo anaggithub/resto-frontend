@@ -1,13 +1,13 @@
 import React from "react";
 import { InputContainer, Row, Label, StyledInput, ErrorRow, ErrorMessage, errorClass } from "./styles"
 
-function Input({ name, type, placeholder, maxLength, minLength, autoComplete, onChange, error, errorMessage, classes, labelText }) {
+function Input({ name, type, placeholder, maxLength, minLength, autoComplete, onChange, error, errorMessage, styles, labelText }) {
     return (
-        <InputContainer addCSS={classes}>
+        <InputContainer styles={styles}>
             <Row>
                 <Label>{labelText}</Label>
                 <StyledInput
-                    addCSS={error ? errorClass : ""}
+                    styles={error ? errorClass : ""}
                     name={name}
                     type={type}
                     placeholder={placeholder}
