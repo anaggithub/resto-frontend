@@ -1,11 +1,5 @@
-import styled, { css } from 'styled-components';
+import { css } from 'styled-components';
 
-export const HomeContainer = styled.section`
+export const layoutStyles = css`
 padding:10px;
 `;
-
-export const typographyStyles = {
-    h1: css`
-      font-size:1rem;     
-    `,
-};
