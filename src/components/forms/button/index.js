@@ -1,10 +1,10 @@
 import React from "react";
 import { StyledButton } from "./styles"
 
-function Button({ classes, onClick, children, variant }) {
+function Button({ styles, onClick, children, variant }) {
   return (
     <StyledButton
-      addCSS={classes}
+      styles={styles}
       variant={variant}
       onClick={onClick} >
       {children}

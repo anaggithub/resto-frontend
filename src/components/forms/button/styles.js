@@ -8,8 +8,6 @@ outline:none;
 border-radius: 25px;
 padding: 0.7rem 2.4rem;
 transition: opacity 0.6s ease-in-out;
-color: #FF8C69;
-background-color:white;
 border: solid 1.3px #FF8C69;
 margin: 0.2rem;
 font-size:12px;
@@ -19,29 +17,30 @@ font-size:12px;
 @media screen and (min-width: 768px) { 
   font-size: 14px;
 }
-/* ${props => props.addCSS} */
+${({ styles }) => styles}
 ${({ variant }) => variants[variant]}
 `;
 
 export const variants = {
   primary: css`
-    background-color: #FF8C69;
-    color:white;
+    background-color: ${({ theme }) => theme.colors.buttonOrange};
+    color:${({ theme }) => theme.colors.white};;
   `,
   secondary: css`
-    /* background-color:white; */
+   background-color:${({ theme }) => theme.colors.white};;
   `,
   special: css`
-    /* font-size:11px; */
+  color: ${({ theme }) => theme.colors.buttonOrange};
+    background-color:${({ theme }) => theme.colors.white};;
     border:none;
      `,
-  add: css`
-    background-color: #FF8C69;
-    color:white;
+  addItem: css`
+    background-color:${({ theme }) => theme.colors.buttonOrange};
+    color:${({ theme }) => theme.colors.white};;
     padding:0;   
     border-radius: 100%; 
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     outline: 0;
     `
 }
