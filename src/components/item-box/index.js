@@ -11,8 +11,8 @@ const ItemBox = ({ styles, name, price, picture }) => {
             <Item>
                 <ItemImage src={picture} />
                 <ItemData>
-                    <Typography as="h4" >{name}</Typography>
-                    <Typography as="p" >{price}</Typography>
+                    <Typography component="h4" >{name}</Typography>
+                    <Typography component="p" >{price}</Typography>
                 </ItemData>
             </Item>
             <Button variant="addItem" ><i className="fas fa-plus"></i></Button>
