@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types";
 import Button from "../../components/forms/button";
 import Typography from "../../components/typography";
 import { ItemsContainer, Item, ItemData, ItemImage, typographyStyles } from "./styles"
@@ -18,5 +19,18 @@ const ItemBox = ({ styles, name, price, picture }) => {
         </ItemsContainer>
     )
 }
+ItemBox.propTypes = {
+    name: PropTypes.string,
+    price: PropTypes.number,
+    picture: PropTypes.string,
+    styles: PropTypes.object
+};
+
+ItemBox.defaultProps = {
+    name: "",
+    price: "",
+    picture: "",
+    styles: {}
+};
 
 export default ItemBox
