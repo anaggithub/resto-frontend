@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const ItemsContainer = styled.div`
 width:100%;
@@ -24,12 +24,3 @@ export const ItemImage = styled.img`
 width:70px;
 height:auto;
 `;
-
-export const typographyStyles = {
-    h4: css`
-          font-size:0.9rem;
-        `,
-    p: css`
-          font-size:0.8rem;
-       `,
-};
