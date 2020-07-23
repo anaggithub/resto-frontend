@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import DefaultLayout from "../../components/layout";
 import ItemBox from "../../components/item-box";
-import { HomeContainer, Title } from "./styles"
-//import Spinner from "../../components/loading-spinner"
+import Typography from "../../components/typography";
+import { HomeContainer, typographyStyles } from "./styles"
 import { useDispatch, useSelector } from "react-redux";
 import { getItems } from "../../actions/items";
 
@@ -18,8 +18,8 @@ const Home = () => {
   return (
     <DefaultLayout>
       <HomeContainer>
-        <Title>Nuestros platos</Title>
-        <div>
+        <Typography tag="h1" styles={typographyStyles}>Nuestros platos</Typography>
+        <React.Fragment>
           {products.length > 0 && products.map(
             (product) => (
               <ItemBox key={product.product_id + 1}
@@ -28,7 +28,7 @@ const Home = () => {
                 picture={product.picture} />
             )
           )}
-        </div>
+        </React.Fragment>
       </HomeContainer>
     </DefaultLayout>
   );

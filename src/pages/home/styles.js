@@ -1,9 +1,11 @@
-import styled from 'styled-components';
-
-export const Title = styled.h2`
-font-size:1rem;
-`;
+import styled, { css } from 'styled-components';
 
 export const HomeContainer = styled.section`
 padding:10px;
 `;
+
+export const typographyStyles = {
+    h1: css`
+      font-size:1rem;     
+    `,
+};
