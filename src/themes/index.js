@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { useSelector } from 'react-redux';
 import { light, dark } from './constants';
-import { getTheme } from '../reducers/themes'; // The theme selector
+import { getCurrentTheme } from '../reducers/themes'; // The theme selector
 
 const themes = {
     light,
@@ -10,7 +10,7 @@ const themes = {
 };
 
 export const ConnectedThemeProvider = ({ children }) => {
-    const currentTheme = useSelector(getTheme);
+    const currentTheme = useSelector(getCurrentTheme);
     return (
         <ThemeProvider theme={themes[currentTheme]}>
             {children}
