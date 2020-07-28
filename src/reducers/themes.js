@@ -1,12 +1,14 @@
 import { THEME_SET } from '../actions/types';
+import { setTheme, getTheme } from "../helpers/themes"
 
 const initialState = {
-    currentTheme: 'light',
+    currentTheme: getTheme() || 'light',
 }
 
 const themesReducer = (state = initialState, action) => {
     switch (action.type) {
         case THEME_SET:
+            setTheme(action.payload)
             return {
                 ...state,
                 currentTheme: action.payload,
@@ -18,4 +20,4 @@ const themesReducer = (state = initialState, action) => {
 export default themesReducer;
 
 // Selector
-export const getTheme = ({ themes }) => themes.currentTheme; 
+export const getCurrentTheme = ({ themes }) => themes.currentTheme; 
