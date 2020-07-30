@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Button from "../../components/forms/button";
-import Typography from "../../components/typography";
+import Button from "../forms/Button";
+import Typography from "../Typography";
 import { ItemsContainer, Item, ItemData, ItemImage } from "./styles";
 
 const ItemBox = ({ styles, name, price, picture }) => (

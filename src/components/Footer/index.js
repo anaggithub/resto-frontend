@@ -1,5 +1,5 @@
 import React from "react";
-import APILogo from "../api-logo";
+import APILogo from "../Api-logo";
 import { StyledFooter, Copyrights, APILogo } from "./styles";
 
 const Footer = () => (

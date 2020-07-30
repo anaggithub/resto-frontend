@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../header";
+import Header from "../Header";
 import { StyledDefaultLayout, Children } from "./styles";
 
 const DefaultLayout = ({ children, layoutStyles, childrenStyles }) => (
