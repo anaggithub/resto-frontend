@@ -1,16 +1,12 @@
 import React from "react";
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const StyledAPIlogo = styled.p`
-font-family: "Bree Serif", serif;
-font-size:24px;
-font-weight:300;
+  font-family: "Bree Serif", serif;
+  font-size: 24px;
+  font-weight: 300;
 `;
 
-function APILogo() {
-    return (
-        <StyledAPIlogo>Delilah Resto</StyledAPIlogo>
-    );
-}
+const APILogo = () => <StyledAPIlogo>Delilah Resto</StyledAPIlogo>;
 
-export default APILogo
+export default APILogo;

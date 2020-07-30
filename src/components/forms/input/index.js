@@ -10,7 +10,7 @@ import {
   errorClass,
 } from "./styles";
 
-function Input({
+const Input = ({
   labelText,
   name,
   value,
@@ -23,29 +23,27 @@ function Input({
   error,
   errorMessage,
   styles,
-}) {
-  return (
-    <InputContainer styles={styles}>
-      <Row>
-        <Label>{labelText}</Label>
-        <StyledInput
-          name={name}
-          value={value}
-          type={type}
-          placeholder={placeholder}
-          maxLength={maxLength}
-          minLength={minLength}
-          autoComplete={autoComplete}
-          onChange={onChange}
-          styles={error ? errorClass : ""}
-        ></StyledInput>
-      </Row>
-      <ErrorRow>
-        {error && <ErrorMessage>{`${errorMessage}`}</ErrorMessage>}
-      </ErrorRow>
-    </InputContainer>
-  );
-}
+}) => (
+  <InputContainer styles={styles}>
+    <Row>
+      <Label>{labelText}</Label>
+      <StyledInput
+        name={name}
+        value={value}
+        type={type}
+        placeholder={placeholder}
+        maxLength={maxLength}
+        minLength={minLength}
+        autoComplete={autoComplete}
+        onChange={onChange}
+        styles={error ? errorClass : ""}
+      ></StyledInput>
+    </Row>
+    <ErrorRow>
+      {error && <ErrorMessage>{`${errorMessage}`}</ErrorMessage>}
+    </ErrorRow>
+  </InputContainer>
+);
 
 Input.propTypes = {
   name: PropTypes.string,
