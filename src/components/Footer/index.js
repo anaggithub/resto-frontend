@@ -1,6 +1,6 @@
-import React from "react";
-import APILogo from "../Api-logo";
-import { StyledFooter, Copyrights, APILogo } from "./styles";
+import React from 'react';
+import APILogo from '../Api-logo';
+import { StyledFooter, Copyrights } from './styles';
 
 const Footer = () => (
   <StyledFooter>
@@ -20,9 +20,7 @@ const Footer = () => (
     </ul>
     <Copyrights className="footer--info">
       <APILogo className="footer--info--apititle" />
-      <p className="footer--info--paragraph">
-        Todos Los Derechos Reservados © 2020
-      </p>
+      <p className="footer--info--paragraph">Todos Los Derechos Reservados © 2020</p>
     </Copyrights>
   </StyledFooter>
 );
