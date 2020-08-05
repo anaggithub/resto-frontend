@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import DefaultLayout from "../../components/layout";
-import Input from "../../components/forms/input";
-import Button from "../../components/forms/button";
-import Spinner from "../../components/loading-spinner";
+import DefaultLayout from "../../components/Layout";
+import Input from "../../components/forms/Input";
+import Button from "../../components/forms/Button";
+import Spinner from "../../components/Loading-spinner";
 import { Form, InputsBox, ButtonsBox, SpinnerBox } from "./styles";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import DefaultLayout from "../../components/layout";
-import ItemBox from "../../components/item-box";
-import Typography from "../../components/typography";
+import DefaultLayout from "../../components/Layout";
+import ItemBox from "../../components/Item-box";
+import Typography from "../../components/Typography";
 import { layoutStyles } from "./styles"
 import { useDispatch, useSelector } from "react-redux";
 import { getItems } from "../../actions/items";
