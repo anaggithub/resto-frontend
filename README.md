@@ -1,5 +1,5 @@
 This was a first attempt to code the Front End for my Resto API (which was deployed with Heroku), using React, Redux and Styled Components. 
-Only worked on the Home and Login pages, following the prototipe I was given during a Full Stack course I did in 2019.
+Only worked on the Home and Login pages, using the prototype I was given during a Full Stack course I did in 2019.
 
 Finally I decided to start it all over again with a different stack (NextJS, AntD, Typescript, Less, Enzyme, etc).
 
